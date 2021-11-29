@@ -25,28 +25,28 @@ class Keyboard extends React.Component<KeyboardProps> {
                     <OperatorButton value='÷'/>
                 </div>
                 <div className="row">
-                    <NumberButton value={1} onClick={this.onButtonClicked.bind(this)} />
-                    <NumberButton value={2} onClick={this.onButtonClicked.bind(this)} />
-                    <NumberButton value={3} onClick={this.onButtonClicked.bind(this)} />
+                    <NumberButton value={1} onClick={this.props.onButtonClicked.bind(this)} />
+                    <NumberButton value={2} onClick={this.props.onButtonClicked.bind(this)} />
+                    <NumberButton value={3} onClick={this.props.onButtonClicked.bind(this)} />
                     <OperatorButton value='x'/>
                 </div>
                 <div className="row">
-                    <NumberButton value={4} onClick={this.onButtonClicked.bind(this)} />
-                    <NumberButton value={5} onClick={this.onButtonClicked.bind(this)} />
-                    <NumberButton value={6} onClick={this.onButtonClicked.bind(this)} />
+                    <NumberButton value={4} onClick={this.props.onButtonClicked.bind(this)} />
+                    <NumberButton value={5} onClick={this.props.onButtonClicked.bind(this)} />
+                    <NumberButton value={6} onClick={this.props.onButtonClicked.bind(this)} />
                     <OperatorButton value='-'/>
                     
                 </div>
                 <div className="row">
-                    <NumberButton value={7} onClick={this.onButtonClicked.bind(this)} />
-                    <NumberButton value={8} onClick={this.onButtonClicked.bind(this)} />
-                    <NumberButton value={9} onClick={this.onButtonClicked.bind(this)} />
+                    <NumberButton value={7} onClick={this.props.onButtonClicked.bind(this)} />
+                    <NumberButton value={8} onClick={this.props.onButtonClicked.bind(this)} />
+                    <NumberButton value={9} onClick={this.props.onButtonClicked.bind(this)} />
                     <OperatorButton value='+'/>
                     
                 </div>
                 <div className="row last-row">
                     <OtherButton value='.'/>
-                    <NumberButton value={0} onClick={this.onButtonClicked.bind(this)} />
+                    <NumberButton value={0} onClick={this.props.onButtonClicked.bind(this)} />
                     <OperatorButton value='='/>
                 </div>
             </div>

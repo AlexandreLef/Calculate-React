@@ -4,6 +4,8 @@ import Keyboard from './Keyboard';
 import Screen from './Screen';
 import Header from './Header';
 
+
+
 class Calculate extends React.Component {
 
     sendNumber(x: number) {
