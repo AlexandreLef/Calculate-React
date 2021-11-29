@@ -12,13 +12,21 @@ class Calculate extends React.Component {
         return console.log(x);
     }
 
+    sendString(x: string) {
+        return console.log(x);
+    }
+
     render() {
         return (
             <div className="calculate">
                 <div className="header"><Header /></div>
                 <div className="container">
-                    <div className="row"><Screen /></div>
-                    <div className="row"><Keyboard onButtonClicked={this.sendNumber.bind(this)}/></div>
+                    <div className="row my-2"><Screen /></div>
+                    <div className="keyboard my-2"><Keyboard 
+                    onNumberButtonClicked={this.sendNumber.bind(this)}
+                    onOperatorButtonClicked={this.sendString.bind(this)}
+                    onOtherButtonClicked={this.sendString.bind(this)}
+                    /></div>
                 </div>
             </div>
         )

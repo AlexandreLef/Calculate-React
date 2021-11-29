@@ -1,21 +1,30 @@
 import React from 'react';
 
 type OtherProps = {
-    value: string
+    value: string,
+    onClick: Function
 }
 
 class OtherButton extends React.Component<OtherProps> {
 
+    sendOther() {
+        return this.props.onClick(this.props.value);       
+    }
 
     render() {
 
-        if (this.props.value == "AC") {
+        if (this.props.value === "AC") {
             return (
-                <button className="btn btn-dark text-warning col-3" value="ac">{this.props.value}</button>
+                <div className="col-3 p-1">
+                    <button className="btn btn-dark text-warning col-12" onClick={this.sendOther.bind(this)}>{this.props.value}</button>
+                </div>
+                
             )
-        } else if (this.props.value == ".") {
+        } else if (this.props.value === ".") {
             return (
-                <button className="btn btn-dark col-3" value="/">{this.props.value}</button>
+                <div className="col-3 p-1">
+                    <button className="btn btn-dark col-12" onClick={this.sendOther.bind(this)}>{this.props.value}</button>
+                </div>
             )
         }
     }

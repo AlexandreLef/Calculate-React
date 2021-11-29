@@ -13,7 +13,9 @@ class NumberButton extends React.Component<NumberProps> {
 
     render() {
         return (
-            <button className="btn btn-dark col-3" value="{this.props.value}" onClick={this.sendNumber.bind(this)}>{this.props.value}</button>
+            <div className="col-3 p-1">
+                <button className="btn btn-dark col-12" value="{this.props.value}" onClick={this.sendNumber.bind(this)}>{this.props.value}</button>
+            </div>
         )
     }
 }
