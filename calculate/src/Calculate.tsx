@@ -30,7 +30,8 @@ class Calculate extends React.Component<CalculateProps, CalculateStates> {
         if (this.state.operator === "") {
             this.setState({
                 ...this.state,
-                n1: this.state.n1 + x.toString()
+                n1: this.state.n1 + x.toString(),
+                result: null
             })
         } else {
             this.setState({
@@ -48,7 +49,7 @@ class Calculate extends React.Component<CalculateProps, CalculateStates> {
                         ...this.state,
                         result: 0
                     })
-                } else if (this.state.operator === "" && this.state.n2 === "") {
+                } else if (this.state.n2 === "") {
                     this.setState({
                         ...this.state,
                         result: parseFloat(this.state.n1)
@@ -56,12 +57,33 @@ class Calculate extends React.Component<CalculateProps, CalculateStates> {
                 } else {
                     let res = this.compute()
                     this.setState({
-                        ...this.state,
+                        n1: "",
+                        n2: "",
+                        operator: "",
                         result: res
                     })
                 }                
                 break;
 
+            case "Del":
+                if (this.state.n1 !== "" && this.state.operator === "") {
+                    this.setState({
+                        ...this.state,
+                        n1: this.state.n1.slice(0, - 1)
+                    })
+                } else if (this.state.operator !== "" && this.state.n2 === "" ) {
+                    this.setState({
+                        ...this.state,
+                        operator: ""
+                    })
+                } else {
+                    this.setState({
+                    ...this.state,
+                    n2: this.state.n2.slice(0, - 1)
+                    })
+                }
+                break;
+           
             case "AC":
                 this.setState({
                     n1: "",
@@ -70,7 +92,7 @@ class Calculate extends React.Component<CalculateProps, CalculateStates> {
                     result: null
                 })
                 break;
-            
+   
             case ".":
                 if (this.state.operator === "") {
                     if (this.state.n1 === "") {
@@ -98,6 +120,7 @@ class Calculate extends React.Component<CalculateProps, CalculateStates> {
                     }
                 }
                 break;
+                
             case "+":
             case "-":
             case "*":

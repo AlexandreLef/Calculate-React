@@ -7,7 +7,6 @@ class Header extends React.Component {
         return (
             <div>
                 <label className="col-11 text-white">Calculatrice</label>
-                <button className="col-1 btn btn-secondary"></button>
             </div>
         )
     }
