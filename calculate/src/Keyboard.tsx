@@ -28,9 +28,9 @@ class Keyboard extends React.Component<KeyboardProps> {
         return (
             <div id="keyboard">
                 <div className="row">
+                    <OtherButton value='setting' onClick={this.props.onOtherButtonClicked.bind(this)} />
                     <OtherButton value='AC' onClick={this.props.onOtherButtonClicked.bind(this)} />
-                    <OperatorButton value='(' onClick={this.props.onOperatorButtonClicked.bind(this)} />
-                    <OperatorButton value=')' onClick={this.props.onOperatorButtonClicked.bind(this)} />
+                    <OtherButton value='Del' onClick={this.props.onOtherButtonClicked.bind(this)} />
                     <OperatorButton value='÷' onClick={this.props.onOperatorButtonClicked.bind(this)} />
                 </div>
                 <div className="row">
