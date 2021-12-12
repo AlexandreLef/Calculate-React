@@ -3,6 +3,7 @@ import React from 'react';
 type OperatorProps = {
     value: string,
     onClick: Function
+    btnColor: string
 }
 
 class OperatorButton extends React.Component<OperatorProps> {
@@ -20,6 +21,7 @@ class OperatorButton extends React.Component<OperatorProps> {
     }
 
     render() {
+        var classColor = this.props.btnColor;
 
         if (this.props.value === "=") {
             return (
@@ -30,7 +32,7 @@ class OperatorButton extends React.Component<OperatorProps> {
         }
         return (
             <div className="col-3 p-1">
-                <button className="btn btn-secondary col-12" onClick={this.sendOperator.bind(this)} >{this.props.value}</button>
+                <button className={"btn " + classColor + " col-12"} onClick={this.sendOperator.bind(this)} >{this.props.value}</button>
             </div>
         )
     }

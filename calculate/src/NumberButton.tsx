@@ -3,6 +3,7 @@ import React from 'react';
 type NumberProps = {
     value: number,
     onClick: Function
+    btnColor: string
 }
 
 class NumberButton extends React.Component<NumberProps> {
@@ -12,9 +13,11 @@ class NumberButton extends React.Component<NumberProps> {
     }
 
     render() {
+        var classColor = this.props.btnColor;
+        
         return (
             <div className="col-3 p-1">
-                <button className="btn btn-dark col-12" onClick={this.sendNumber.bind(this)}>{this.props.value}</button>
+                <button className={"btn " + classColor + " col-12"} onClick={this.sendNumber.bind(this)}>{this.props.value}</button>
             </div>
         )
     }
